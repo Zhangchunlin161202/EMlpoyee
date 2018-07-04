@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    <style>
+        .container1{
+            color: darkblue;
+            margin: auto;
+            height: 600px;
+            width: 1000px;
+        }
+        .container2{
+            float: left;
+            height: 600px;
+            width: 500px;
+        }
+        select{
+            width: 218px;
+            border:1px;
+            border-style: solid;
+            border-color:lightseagreen;
+        }
+        input{
+            width: 218px;
+            border:1px;
+            border-style: solid;
+            border-color:lightseagreen;
+        }
+    </style>
+
+    <script src=""></script>
+    <script>
+        function backhistory() {
+            history.go(-1);
+        }
+    </script>
+
+</head>
+<body>
+<div style="height: 100px;width: 100px"></div>
+<div class="container1">
+    <form action="" method="post">
+    {% csrf_token %}
+        {% for el in emp_list %}
+            <div class="container2">
+        <label for="1">姓&emsp;&emsp;名:</label><input type="text" name="sname" value="{{ el.user_name }}"><br><br>
+        <label for="2">年&emsp;&emsp;龄:</label><input type="number" name="sage" value="{{ el.user_age }}"><br><br>
+        <label for="3">性&emsp;&emsp;别:</label><select name="sgender" >
+        <option value="男" selected>男</option>
+        <option value="女">女</option>
+    </select><br><br>
+        <label for="4">学&emsp;&emsp;历:</label><select name="seducation" id="">
+        <option value="小学">小学</option>
+        <option value="初中">初中</option>
+        <option value="初中">初中</option>
+        <option value="大专" selected>大专</option>
+        <option value="本科">本科</option>
+        <option value="硕士">硕士</option>
+        <option value="博士">博士</option>
+    </select><br><br>
+        <label for="5">部&emsp;&emsp;门:</label><select name="ssection" id="5">
+               {% for di in depar_info %}
+                    <option value="{{ di.department_name }}">{{ di.department_name }}</option>
+               {% endfor %}
+
+
+    </select><br><br>
+        <label for="6">座&emsp;&emsp;机:</label><input type="text" name="scall" value="{{ el.user_tel }}"><br><br>
+        <label for="7">工资卡号:</label><input type="text" name="spaycard" value="{{ el.user_bankcard }}"><br><br>
+        <label for="8">身&nbsp;份&nbsp;&nbsp;证:</label><input type="text" name="scard" value="{{ el.user_idnum }}"><br><br>
+        <label for="9">添&nbsp;加&nbsp;&nbsp;人:</label><input type="text" name="sadd" value="{{ el.user_addman }}"><br><br>
+    </div>
+    <div class="container2">
+        <label for="1">帐&emsp;&emsp;号：</label><input type="text" name="saccount" value="{{ el.user_num }}"><br><br>
+        <label for="2">密&emsp;&emsp;码：</label><input type="text" name="spassword" value="{{ el.user_pw }}"><br><br>
+        <label for="3">民&emsp;&emsp;族：</label><input type="text" name="snation" value="{{ el.user_nation }}"><br><br>
+        <label for="4">婚&emsp;&emsp;姻：</label><select name="smarriage" id="">
+        <option value="">已婚</option>
+        <option value="">未婚</option>
+    </select><br><br>
+        <label for="5">权&emsp;&emsp;限：</label><select name="spower" id="">
+
+            {% for ur in user_role %}
+                <option value="{{ ur.role_name }}">{{ ur.role_name }}</option>
+            {% endfor %}
+
+
+    </select><br><br>
+        <label for="6">手&emsp;&emsp;机：</label><input type="text" name="spn" value="{{ el.user_mobile }}"><br><br>
+        <label for="7">地&emsp;&emsp;址：</label><input type="text" name="saddress" value="{{ el.user_addres }}"><br><br>
+        <label for="8">爱&emsp;&emsp;好：</label><input type="text" name="shobby" value="{{ el.user_intest }}"><br><br>
+        <label for="9">邮&emsp;&emsp;箱：</label><input type="text" name="semail" value="{{ el.user_email }}"><br><br>
+    </div>
+        {% endfor %}
+
+
+
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <input type="submit" value="提交" style="width: 60px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <input type="reset" value="重置" style="width: 60px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <button onclick="history.back()" style="border-color: lightseagreen">返回</button>
+
+    </form>
+
+</div>
+</body>
+</html>
+

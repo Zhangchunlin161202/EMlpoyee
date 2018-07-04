@@ -1,0 +1,45 @@
+{#{% extends 'base.html' %}#}
+
+
+
+{% for si in staff_info %}
+    <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td width="8" background="/static/images/tab_12.gif">&nbsp;</td>
+                        <td>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="b5d6e6" onmouseover="changeto()" onmouseout="changeback()">
+                            <tbody>
+
+                              <tr>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 3%;"><div align="center" class="STYLE1"><div align="center">{{ si.s_id }}</div></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 5%;"><div align="center"><span class="STYLE1">{{ si.s_name }}</span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 3%;"><div align="center"><span class="STYLE1">{{ si.s_gender }} </span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 3%;"><div align="center"><span class="STYLE1">{{ si.s_years }}</span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 3%;"><div align="center"><span class="STYLE1">{{ si.s_nation }} </span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 5%;"><div align="center"><span class="STYLE1">{{ si.s_section}} </span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 5%;"><div align="center"><span class="STYLE1">{{ si.s_role }} </span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 5%;"><div align="center"><span class="STYLE1">{{ si.s_education}} </span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 5%;"><div align="center"><span class="STYLE1">{{ si.s_marriage }}</span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 15%;"><div align="center"><span class="STYLE1">{{ si.s_addr }}</span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 10%;"><div align="center"><span class="STYLE1">{{ si.s_phone }} </span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 9%;"><div align="center"><span class="STYLE1">{{ si.s_call }}</span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style=""><div align="center"><span class="STYLE1">{{ si.s_email }}</span></div></td>
+                                <td height="20" bgcolor="#FFFFFF" style="width: 14%;"><div align="center"><span class="STYLE4"><img src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16">
+                                <a href="http://localhost:8080/crm/view/employee/emp_edit.html">编辑</a>&nbsp;<img src="http://localhost:8080/crm/resource/images/edt.gif" width="16" height="16">
+                                <a href="http://localhost:8080/crm/view/employee/emp_detail.html">详情</a>&nbsp;<img src="http://localhost:8080/crm/resource/images/del.gif" width="16" height="16">
+                                <a href="http://localhost:8080/crm/servlet/UserDeleteServlet?id=1">删除</a></span></div></td>
+                              </tr>
+
+
+                            </tbody>
+                            </table>
+                    </td>
+                    <td width="8" background="/static/images/tab_15.gif">&nbsp;</td>
+        </tr>
+            </tbody></table>
+        </td>
+    </tr>
+{% endfor %}
+
